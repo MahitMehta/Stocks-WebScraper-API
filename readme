@@ -1,0 +1,19 @@
+Public version is hosted on heroku at this link:
+https://free-stocks-api.herokuapp.com
+
+To use this web application, aside from having flask and selenium installed,
+you will mandatorily be required to download the latest chromedriver.
+
+1. To do this you first need to head over to "https://chromedriver.chromium.org/downloads".
+
+2. Next, you will need to click on the latest driver version, from there you will be redirected.
+
+3. Now you will have to select the correct download link for your system's software.
+
+4. This will install a zip file from which you will need to extract the folder inside. 
+
+5. Lastly, take out the file called chromedriver.exe from the extracted folder and move that file
+into the root directory of your project.
+
+If you wish to deploy this to heroku, or something similar, watch this 
+tutorial: https://youtu.be/Ven-pqwk3ec?t=189

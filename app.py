@@ -11,8 +11,10 @@ def get_stock_price(ticker, stock_exchange):
     options.add_argument('--headless')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--no-sandbox')
-    broswer = webdriver.Chrome(executable_path=os.environ.get(
-        "CHROMEDRIVER_PATH"), chrome_options=options)
+    chrome_driver_path = os.environ.get("CHROMEDRIVER_PATH")
+    if not chrome_driver_path:
+        chrome_driver_path = "./chromedriver.exe"
+    broswer = webdriver.Chrome(chrome_driver_path, chrome_options=options)
 
     try:
         url = f'https://www.google.com/finance/quote/{ticker}:{stock_exchange}'
@@ -34,7 +36,7 @@ def error_handler():
 app = Flask(__name__)
 
 
-@ app.route("/", methods=["GET"])
+@app.route("/", methods=["GET"])
 def route_directory():
     req = request.args
     ticker = req.get("ticker")
