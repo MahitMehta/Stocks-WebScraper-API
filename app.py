@@ -19,8 +19,7 @@ def get_stock_price(ticker, stock_exchange):
     try:
         url = f'https://www.google.com/finance/quote/{ticker}:{stock_exchange}'
         broswer.get(url)
-        stock_price = broswer.find_element_by_xpath(
-            '//*[@id="yDmH0d"]/c-wiz/div/div[3]/main/div[2]/c-wiz/div/div[1]/div[1]/div/div[1]/div[1]/div/div[1]/div/span/div/div').text
+        stock_price = broswer.find_element_by_class_name("fxKbKc").text
         return stock_price
     except Exception:
         return None
