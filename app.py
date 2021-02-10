@@ -9,7 +9,8 @@ options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 options.add_argument('--headless')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--no-sandbox')
-broswer = webdriver.Chrome('./chromedriver.exe', options=options)
+broswer = webdriver.Chrome(os.environ.get(
+    "GOOGLE_CHROME_BIN"), options=options)
 
 
 def get_stock_price(ticker, stock_exchange):
