@@ -5,7 +5,7 @@ from flask import Flask, render_template
 def get_stock_price():
     url = 'https://www.google.com/finance/quote/DMTK:NASDAQ'
     options = webdriver.ChromeOptions()
-    options.add_argument('headless')
+    options.add_argument('--headless')
     broswer = webdriver.Chrome('./chromedriver.exe', options=options)
     broswer.get(url)
 
