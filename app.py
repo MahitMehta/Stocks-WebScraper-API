@@ -9,8 +9,7 @@ options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 options.add_argument('--headless')
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--no-sandbox')
-broswer = webdriver.Chrome(os.environ.get(
-    "GOOGLE_CHROME_BIN"), options=options)
+broswer = webdriver.Chrome("./chromedriver.exe", options=options)
 
 
 def get_stock_price(ticker, stock_exchange):
@@ -34,7 +33,7 @@ def error_handler():
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"])
+@ app.route("/", methods=["GET"])
 def route_directory():
     req = request.args
     ticker = req.get("ticker")
