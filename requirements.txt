@@ -1,0 +1,3 @@
+Selenium==3.141.0
+Flask==1.1.1
+Gunicorn==20.0.4
